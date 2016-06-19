@@ -1,5 +1,5 @@
 [package]
-name = "db-train-info"
+name = "db_train_info"
 version = "0.1.0"
 authors = ["Fabian Schmidt <fschmidt95@googlemail.com>"]
 repository = "https://github.com/fceschmidt/db-train-info.git"
