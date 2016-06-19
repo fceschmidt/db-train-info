@@ -64,7 +64,7 @@ impl TrainInformation {
     ///
     /// # Panics
     /// If the request does not return a HTTP response, this function panics.
-    pub fn request_status(self) -> Result<String, StatusCode> {
+    pub fn request_status(&self) -> Result<String, StatusCode> {
         let http_client = Client::new();
 
         // This dirty user-agent trick got everything to work, eh :)
@@ -92,7 +92,7 @@ impl TrainInformation {
     }
 
     /// Convenience function to get the current status of the train.
-    pub fn get_status(self) -> Result<Status, ()> {
+    pub fn get_status(&self) -> Result<Status, ()> {
         match self.request_status() {
             Ok(response) => {
                 match TrainInformation::deserialize_status(response) {
@@ -105,7 +105,7 @@ impl TrainInformation {
     }
 
     /// Convenience function to get the current speed of the train.
-    pub fn get_speed(self) -> Result<f32, ()> {
+    pub fn get_speed(&self) -> Result<f32, ()> {
         match self.get_status() {
             Ok(status) => Ok(status.speed),
             Err(_) => Err(()),
