@@ -1,0 +1,10 @@
+[package]
+name = "db-train-info"
+version = "0.1.0"
+authors = ["Fabian Schmidt <fschmidt95@googlemail.com>"]
+repository = "https://github.com/fceschmidt/db-train-info.git"
+homepage = "https://github.com/fceschmidt/db-train-info"
+license = "MIT"
+description = "A library which provides access to information provided by the Deutsche Bahn ICE WiFi hotspot."
+
+[dependencies]
