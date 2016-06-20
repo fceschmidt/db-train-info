@@ -52,7 +52,7 @@ impl fmt::Display for Status {
         match result {
             Ok(dt) => {
                 write!(f,
-                       "Speed: {:.*} km/h; Coordinates: {:.*},{:.*}; Timestamp: {}",
+                       "Speed: {:.*} km/h; Lat/Long: {:.*},{:.*}; Timestamp: {}",
                        1,
                        self.speed,
                        4,
@@ -63,7 +63,7 @@ impl fmt::Display for Status {
             }
             Err(_) => {
                 write!(f,
-                       "Speed: {:.*} km/h; Coordinates: {:.*},{:.*}",
+                       "Speed: {:.*} km/h; Lat/Long: {:.*},{:.*}",
                        1,
                        self.speed,
                        4,
