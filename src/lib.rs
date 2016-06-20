@@ -56,7 +56,7 @@ impl TrainInformation {
     /// # Example
     ///
     /// ```
-    /// TrainInformation::new("http://ice.portal2/api1/rs/status", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
+    /// TrainInformation::new("http://ice.portal2/api1/rs/status", "http://ice.portal2/api1/rs/tripInfo", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
     /// ```
     pub fn new(status_url: &str, trip_info_url: &str, user_agent: &str) -> TrainInformation {
         TrainInformation {
@@ -110,36 +110,36 @@ impl TrainInformation {
     }
 
     /// Convenience function to get the current status of the train.
-    pub fn get_status(&self) -> Result<Status, ()> {
+    pub fn get_status(&self) -> Option<Status> {
         match self.request(&self.status_url) {
             Ok(response) => {
                 match TrainInformation::deserialize_status(response) {
-                    Ok(status) => Ok(status),
-                    Err(_) => Err(()),
+                    Ok(status) => Some(status),
+                    Err(_) => None,
                 }
             }
-            Err(_) => Err(()),
+            Err(_) => None,
         }
     }
 
     /// Convenience function to get the current trip information of the train.
-    pub fn get_trip_info(&self) -> Result<Trip, ()> {
+    pub fn get_trip_info(&self) -> Option<Trip> {
         match self.request(&self.trip_info_url) {
             Ok(response) => {
                 match TrainInformation::deserialize_trip_info(response) {
-                    Ok(status) => Ok(status),
-                    Err(_) => Err(()),
+                    Ok(status) => Some(status),
+                    Err(_) => None,
                 }
             }
-            Err(_) => Err(()),
+            Err(_) => None,
         }
     }
 
     /// Convenience function to get the current speed of the train.
-    pub fn get_speed(&self) -> Result<f32, ()> {
+    pub fn get_speed(&self) -> Option<f32> {
         match self.get_status() {
-            Ok(status) => Ok(status.speed),
-            Err(_) => Err(()),
+            Some(status) => Some(status.speed),
+            None => None,
         }
     }
 }
