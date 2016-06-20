@@ -3,7 +3,9 @@
 
 extern crate rustc_serialize;
 extern crate hyper;
+extern crate time;
 
+use std::fmt;
 use std::io::prelude::Read;
 use std::str::FromStr;
 use hyper::Client;
@@ -11,6 +13,7 @@ use hyper::header::Headers;
 use hyper::status::StatusCode;
 use rustc_serialize::json;
 use rustc_serialize::json::DecoderError;
+use time::Timespec;
 
 /// Contains information about the current state of the train.
 ///
@@ -27,6 +30,43 @@ pub struct Status {
     longitude: f32,
     /// The server time of the request.
     serverTime: i64,
+}
+
+/// Implements the `{}` format marker for the `Status` struct.
+impl fmt::Display for Status {
+    /// Prints the `Status` struct in a human-readable format.
+    ///
+    /// Prints speed, GPS coordinates and the server timestamp interpreted as UTC time. If
+    /// formatting the server timestamp fails, it is omitted in the result of this function.
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // Calculate the timestamp for the `time` crate
+        let timestamp = Timespec {
+            sec: self.serverTime / 1000,
+            nsec: (self.serverTime % 1000) as i32 * 1000000,
+        };
+        let tm = time::at_utc(timestamp);
+        let result = time::strftime("%c", &tm);
+
+        // Check whether conversion went OK or we encountered an error, and either print the
+        // timestamp or not
+        match result {
+            Ok(dt) => {
+                write!(f,
+                       "Speed: {}; Coordinates: {},{}; Timestamp: {}",
+                       self.speed,
+                       self.latitude,
+                       self.longitude,
+                       dt)
+            }
+            Err(_) => {
+                write!(f,
+                       "Speed: {}; Coordinates: {},{}",
+                       self.speed,
+                       self.latitude,
+                       self.longitude)
+            }
+        }
+    }
 }
 
 /// Stores information which is needed to retrieve a status from the train.

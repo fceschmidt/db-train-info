@@ -10,3 +10,4 @@ description = "A library which provides access to information provided by the De
 [dependencies]
 rustc-serialize = "0.3"
 hyper = "0.9.8"
+time = "0.1.35"
