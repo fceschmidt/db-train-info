@@ -1,7 +1,7 @@
 /// References the last and the next stop of the train.
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
-pub struct TripStopInfo {
+pub struct TrainVicinity {
     /// The next scheduled stop
     pub scheduledNext: String,
     /// The next actual stop
@@ -29,7 +29,7 @@ pub struct Coordinates {
 /// A train station in the trajectory of a train.
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
-pub struct Station {
+pub struct StationInfo {
     /// The station ID
     pub evaNr: String,
     /// The name of the station
@@ -41,7 +41,7 @@ pub struct Station {
 /// Schedules and delays in the trajectory of a train.
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
-pub struct StopTimetable {
+pub struct TimeInfo {
     /// The scheduled time of arrival
     ///
     /// Optional since some stops do not have an arrival time (such as the very first one).
@@ -67,7 +67,7 @@ pub struct StopTimetable {
 /// The track/platform at a specific station.
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
-pub struct StopTrack {
+pub struct TrackInfo {
     /// The scheduled track
     pub scheduled: String,
     /// The actual track
@@ -77,7 +77,7 @@ pub struct StopTrack {
 /// Miscellaneous information about a specific train station.
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
-pub struct StopInfo {
+pub struct MiscInfo {
     /// The status (I do not know what this indicates)
     pub status: i32,
     /// Whether the station has already been passed or not
@@ -93,13 +93,13 @@ pub struct StopInfo {
 #[allow(non_snake_case)]
 pub struct Stop {
     /// Train station information
-    pub station: Station,
+    pub station: StationInfo,
     /// Timetable information
-    pub timetable: StopTimetable,
+    pub timetable: TimeInfo,
     /// Track information
-    pub track: StopTrack,
+    pub track: TrackInfo,
     /// Miscellaneous information
-    pub info: StopInfo,
+    pub info: MiscInfo,
     /// If delayed, the reason is indicated here.
     ///
     /// Optional since, although this may be contrary to common intuition, we don't always have
@@ -129,7 +129,7 @@ pub struct Trip {
     /// The total distance travelled by this train from start to end, in meters
     pub totalDistance: i64,
     /// Last/next stop information
-    pub stopInfo: TripStopInfo,
+    pub stopInfo: TrainVicinity,
     /// The stops along the trajectory of this train
     pub stops: Vec<Stop>,
 }
