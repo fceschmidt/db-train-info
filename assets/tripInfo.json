@@ -44,62 +44,311 @@
             "delayReasons":null
         },{
             "station":{
-                "evaNr":"8002548_00","name":"Hamburg Dammtor","geocoordinates":{"latitude":53.560751,"longitude":9.989566}
+                "evaNr":"8002548_00",
+                "name":"Hamburg Dammtor",
+                "geocoordinates":{
+                    "latitude":53.560751,
+                    "longitude":9.989566
+                }
             },
             "timetable":{
-                "scheduledArrivalTime":1466414100000,"actualArrivalTime":1466414100000,"arrivalDelay":"","scheduledDepartureTime":1466414220000,"actualDepartureTime":1466414220000,"departureDelay":""
+                "scheduledArrivalTime":1466414100000,
+                "actualArrivalTime":1466414100000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466414220000,
+                "actualDepartureTime":1466414220000,
+                "departureDelay":""
             },
             "track":{
-                "scheduled":"4","actual":"4"
+                "scheduled":"4",
+                "actual":"4"
             },
             "info":{
-                "status":0,"passed":true,"distance":3704,"distanceFromStart":3704
+                "status":0,
+                "passed":true,
+                "distance":3704,
+                "distanceFromStart":3704
             },
             "delayReasons":null
         },{
             "station":{
-                "evaNr":"8002549_00","name":"Hamburg Hbf","geocoordinates":{"latitude":53.552736,"longitude":10.006909}
+                "evaNr":"8002549_00",
+                "name":"Hamburg Hbf",
+                "geocoordinates":{
+                    "latitude":53.552736,
+                    "longitude":10.006909
+                }
             },
             "timetable":{
-                "scheduledArrivalTime":1466414400000,"actualArrivalTime":1466414400000,"arrivalDelay":"","scheduledDepartureTime":1466414580000,"actualDepartureTime":1466414640000,"departureDelay":"+1"
+                "scheduledArrivalTime":1466414400000,
+                "actualArrivalTime":1466414400000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466414580000,
+                "actualDepartureTime":1466414640000,
+                "departureDelay":"+1"
             },
             "track":{
-                "scheduled":"14","actual":"14"
+                "scheduled":"14",
+                "actual":"14"
             },
             "info":{
-                "status":0,"passed":true,"distance":1452,"distanceFromStart":5156
+                "status":0,
+                "passed":true,
+                "distance":1452,
+                "distanceFromStart":5156
             },
             "delayReasons":null
         },{
             "station":{
-                "evaNr":"8000147_00","name":"Hamburg-Harburg","geocoordinates":{"latitude":53.455908,"longitude":9.991701}
+                "evaNr":"8000147_00",
+                "name":"Hamburg-Harburg",
+                "geocoordinates":{
+                    "latitude":53.455908,
+                    "longitude":9.991701
+                }
             },
             "timetable":{
-                "scheduledArrivalTime":1466415120000,"actualArrivalTime":1466415180000,"arrivalDelay":"+1","scheduledDepartureTime":1466415240000,"actualDepartureTime":1466415300000,"departureDelay":"+1"
+                "scheduledArrivalTime":1466415120000,
+                "actualArrivalTime":1466415180000,
+                "arrivalDelay":"+1",
+                "scheduledDepartureTime":1466415240000,
+                "actualDepartureTime":1466415300000,
+                "departureDelay":"+1"
             },
             "track":{
-                "scheduled":"5","actual":"5"
+                "scheduled":"5",
+                "actual":"5"
             },
             "info":{
-                "status":0,"passed":true,"distance":10817,"distanceFromStart":15973
+                "status":0,
+                "passed":true,
+                "distance":10817,
+                "distanceFromStart":15973
             },
             "delayReasons":null
         },{
-            "station":{"evaNr":"8000152_00","name":"Hannover Hbf","geocoordinates":{"latitude":52.376761,"longitude":9.741021}},"timetable":{"scheduledArrivalTime":1466421780000,"actualArrivalTime":1466421780000,"arrivalDelay":"","scheduledDepartureTime":1466421960000,"actualDepartureTime":1466421960000,"departureDelay":""},"track":{"scheduled":"4","actual":"4"},"info":{"status":0,"passed":false,"distance":121201,"distanceFromStart":137174},"delayReasons":null
+            "station":{
+                "evaNr":"8000152_00",
+                "name":"Hannover Hbf",
+                "geocoordinates":{
+                    "latitude":52.376761,
+                    "longitude":9.741021
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466421780000,
+                "actualArrivalTime":1466421780000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466421960000,
+                "actualDepartureTime":1466421960000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"4",
+                "actual":"4"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":121201,
+                "distanceFromStart":137174
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8000128_00","name":"Göttingen","geocoordinates":{"latitude":51.536815,"longitude":9.926072}},"timetable":{"scheduledArrivalTime":1466424000000,"actualArrivalTime":1466424000000,"arrivalDelay":"","scheduledDepartureTime":1466424120000,"actualDepartureTime":1466424120000,"departureDelay":""},"track":{"scheduled":"10","actual":"10"},"info":{"status":0,"passed":false,"distance":94281,"distanceFromStart":231455},"delayReasons":null
+            "station":{
+                "evaNr":"8000128_00",
+                "name":"Göttingen",
+                "geocoordinates":{
+                    "latitude":51.536815,
+                    "longitude":9.926072
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466424000000,
+                "actualArrivalTime":1466424000000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466424120000,
+                "actualDepartureTime":1466424120000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"10",
+                "actual":"10"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":94281,
+                "distanceFromStart":231455
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8003200_00","name":"Kassel-Wilhelmshöhe","geocoordinates":{"latitude":51.313114,"longitude":9.446898}},"timetable":{"scheduledArrivalTime":1466425260000,"actualArrivalTime":1466425260000,"arrivalDelay":"","scheduledDepartureTime":1466425440000,"actualDepartureTime":1466425440000,"departureDelay":""},"track":{"scheduled":"2","actual":"2"},"info":{"status":0,"passed":false,"distance":41515,"distanceFromStart":272970},"delayReasons":null
+            "station":{
+                "evaNr":"8003200_00",
+                "name":"Kassel-Wilhelmshöhe",
+                "geocoordinates":{
+                    "latitude":51.313114,
+                    "longitude":9.446898
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466425260000,
+                "actualArrivalTime":1466425260000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466425440000,
+                "actualDepartureTime":1466425440000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"2",
+                "actual":"2"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":41515,
+                "distanceFromStart":272970
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8000115_00","name":"Fulda","geocoordinates":{"latitude":50.554723,"longitude":9.683977}},"timetable":{"scheduledArrivalTime":1466427240000,"actualArrivalTime":1466427240000,"arrivalDelay":"","scheduledDepartureTime":1466427360000,"actualDepartureTime":1466427360000,"departureDelay":""},"track":{"scheduled":"4","actual":"4"},"info":{"status":0,"passed":false,"distance":85974,"distanceFromStart":358944},"delayReasons":null
+            "station":{
+                "evaNr":"8000115_00",
+                "name":"Fulda",
+                "geocoordinates":{
+                    "latitude":50.554723,
+                    "longitude":9.683977
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466427240000,
+                "actualArrivalTime":1466427240000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466427360000,
+                "actualDepartureTime":1466427360000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"4",
+                "actual":"4"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":85974,
+                "distanceFromStart":358944
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8000260_00","name":"Würzburg Hbf","geocoordinates":{"latitude":49.801796,"longitude":9.93578}},"timetable":{"scheduledArrivalTime":1466429220000,"actualArrivalTime":1466429220000,"arrivalDelay":"","scheduledDepartureTime":1466429340000,"actualDepartureTime":1466429340000,"departureDelay":""},"track":{"scheduled":"4","actual":"4"},"info":{"status":0,"passed":false,"distance":85644,"distanceFromStart":444588},"delayReasons":null
+            "station":{
+                "evaNr":"8000260_00",
+                "name":"Würzburg Hbf",
+                "geocoordinates":{
+                    "latitude":49.801796,
+                    "longitude":9.93578
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466429220000,
+                "actualArrivalTime":1466429220000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466429340000,
+                "actualDepartureTime":1466429340000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"4",
+                "actual":"4"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":85644,
+                "distanceFromStart":444588
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8000284_00","name":"Nürnberg Hbf","geocoordinates":{"latitude":49.445616,"longitude":11.082989}},"timetable":{"scheduledArrivalTime":1466432640000,"actualArrivalTime":1466432640000,"arrivalDelay":"","scheduledDepartureTime":1466432820000,"actualDepartureTime":1466432820000,"departureDelay":""},"track":{"scheduled":"9","actual":"9"},"info":{"status":0,"passed":false,"distance":91662,"distanceFromStart":536250},"delayReasons":null
+            "station":{
+                "evaNr":"8000284_00",
+                "name":"Nürnberg Hbf",
+                "geocoordinates":{
+                    "latitude":49.445616,
+                    "longitude":11.082989
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466432640000,
+                "actualArrivalTime":1466432640000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466432820000,
+                "actualDepartureTime":1466432820000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"9",
+                "actual":"9"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":91662,
+                "distanceFromStart":536250
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8000183_00","name":"Ingolstadt Hbf","geocoordinates":{"latitude":48.744541,"longitude":11.437337}},"timetable":{"scheduledArrivalTime":1466434680000,"actualArrivalTime":1466434680000,"arrivalDelay":"","scheduledDepartureTime":1466434860000,"actualDepartureTime":1466434860000,"departureDelay":""},"track":{"scheduled":"3","actual":"3"},"info":{"status":0,"passed":false,"distance":82137,"distanceFromStart":618387},"delayReasons":null
+            "station":{
+                "evaNr":"8000183_00",
+                "name":"Ingolstadt Hbf",
+                "geocoordinates":{
+                    "latitude":48.744541,
+                    "longitude":11.437337
+                }
+            },"timetable":{
+                "scheduledArrivalTime":1466434680000,
+                "actualArrivalTime":1466434680000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":1466434860000,
+                "actualDepartureTime":1466434860000,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"3",
+                "actual":"3"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":82137,
+                "distanceFromStart":618387
+            },
+            "delayReasons":null
         },{
-            "station":{"evaNr":"8000261_00","name":"München Hbf","geocoordinates":{"latitude":48.140232,"longitude":11.558335}},"timetable":{"scheduledArrivalTime":1466437080000,"actualArrivalTime":1466437080000,"arrivalDelay":"","scheduledDepartureTime":null,"actualDepartureTime":null,"departureDelay":""},"track":{"scheduled":"18","actual":"18"},"info":{"status":0,"passed":false,"distance":67805,"distanceFromStart":686192},"delayReasons":null
+            "station":{
+                "evaNr":"8000261_00",
+                "name":"München Hbf",
+                "geocoordinates":{
+                    "latitude":48.140232,
+                    "longitude":11.558335
+                }
+            },
+            "timetable":{
+                "scheduledArrivalTime":1466437080000,
+                "actualArrivalTime":1466437080000,
+                "arrivalDelay":"",
+                "scheduledDepartureTime":null,
+                "actualDepartureTime":null,
+                "departureDelay":""
+            },
+            "track":{
+                "scheduled":"18",
+                "actual":"18"
+            },
+            "info":{
+                "status":0,
+                "passed":false,
+                "distance":67805,
+                "distanceFromStart":686192
+            },
+            "delayReasons":null
         }
     ]
 }
