@@ -30,6 +30,20 @@ pub struct Status {
 }
 
 /// Stores information which is needed to retrieve a status from the train.
+///
+/// # Examples
+///
+/// A simple way to use this struct is the following:
+///
+/// ```
+/// let info = TrainInformation::new("http://ice.portal2/api1/rs/status", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
+/// ```
+///
+/// You can now use this variable to make calls to the API like this:
+///
+/// ```
+/// println!("Current train speed: {} km/h", info.get_speed().unwrap());
+/// ```
 pub struct TrainInformation {
     /// The URL of the JSON status page.
     status_url: String,
@@ -50,6 +64,9 @@ impl TrainInformation {
     ///
     /// # Example
     ///
+    /// ```
+    /// TrainInformation::new("http://ice.portal2/api1/rs/status", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
+    /// ```
     pub fn new(status_url: &str, user_agent: &str) -> TrainInformation {
         TrainInformation {
             status_url: String::from_str(status_url).unwrap(),
