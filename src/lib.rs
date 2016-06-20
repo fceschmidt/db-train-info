@@ -45,7 +45,7 @@ impl fmt::Display for Status {
             nsec: (self.serverTime % 1000) as i32 * 1000000,
         };
         let tm = time::at_utc(timestamp);
-        let result = time::strftime("%c", &tm);
+        let result = time::strftime("%Y-%m-%d %H:%M:%S", &tm);
 
         // Check whether conversion went OK or we encountered an error, and either print the
         // timestamp or not
