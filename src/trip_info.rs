@@ -165,7 +165,7 @@ impl Trip {
 
     /// Get the distance to the previous stop in kilometers.
     pub fn distance_to_previous_stop(&self) -> f64 {
-        self.distanceFromLastStop as f64/1000f64
+        Trip::distance_to_km(self.distanceFromLastStop)
     }
 
     /// Get the distance to the next stop in kilometers.
@@ -188,5 +188,10 @@ impl Trip {
             },
             None => None
         }
+    }
+
+    /// Returns the identifier of the train, like "ICE xxx".
+    pub fn train_identifier(&self) -> String {
+        format!("{} {}", self.trainType, self.vzn)
     }
 }
