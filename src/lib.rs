@@ -25,12 +25,15 @@ use trip_info::Trip;
 /// A simple way to use this struct is the following:
 ///
 /// ```
+/// use db_train_info::TrainInformation;
 /// let info = TrainInformation::new("http://ice.portal2/api1/rs/status", "http://ice.portal2/api1/rs/tripInfo", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
 /// ```
 ///
 /// You can now use this variable to make calls to the API like this:
 ///
 /// ```
+/// # use db_train_info::TrainInformation;
+/// # let info = TrainInformation::new("https://raw.githubusercontent.com/fceschmidt/db-train-info/master/assets/status.json", "http://ice.portal2/api1/rs/tripInfo", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
 /// println!("Current train speed: {} km/h", info.get_speed().unwrap());
 /// ```
 pub struct TrainInformation {
@@ -56,7 +59,8 @@ impl TrainInformation {
     /// # Example
     ///
     /// ```
-    /// TrainInformation::new("http://ice.portal2/api1/rs/status", "http://ice.portal2/api1/rs/tripInfo", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
+    /// use db_train_info::TrainInformation;
+    /// let info = TrainInformation::new("http://ice.portal2/api1/rs/status", "http://ice.portal2/api1/rs/tripInfo", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36");
     /// ```
     pub fn new(status_url: &str, trip_info_url: &str, user_agent: &str) -> TrainInformation {
         TrainInformation {
