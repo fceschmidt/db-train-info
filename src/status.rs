@@ -2,6 +2,7 @@ extern crate time;
 
 use std::fmt;
 use time::Timespec;
+use super::Coordinates;
 
 /// The current state of the train (Speed, Location, Time).
 ///
@@ -11,13 +12,37 @@ use time::Timespec;
 #[allow(non_snake_case)]
 pub struct Status {
     /// The speed of the train.
-    pub speed: f32,
+    speed: f32,
     /// The GPS latitude of the train.
-    pub latitude: f32,
+    latitude: f32,
     /// The GPS longitude of the train.
-    pub longitude: f32,
+    longitude: f32,
     /// The server time of the request.
-    pub serverTime: i64,
+    serverTime: i64,
+}
+
+impl Status {
+    /// Get the train speed
+    pub fn speed(&self) -> f32 {
+        self.speed
+    }
+
+    // Get the GPS coordinates
+    pub fn coordinates(&self) -> Coordinates {
+        Coordinates {
+            latitude: self.latitude,
+            longitude: self.longitude,
+        }
+    }
+
+    /// Get the server time.
+    pub fn server_time(&self) -> time::Tm {
+        let timestamp = Timespec {
+            sec: self.serverTime / 1000,
+            nsec: (self.serverTime % 1000) as i32 * 1_000_000
+        };
+        time::at(timestamp)
+    }
 }
 
 /// Implements the `{}` format marker for the `Status` struct.
@@ -33,7 +58,7 @@ impl fmt::Display for Status {
             nsec: (self.serverTime % 1000) as i32 * 1000000,
         };
         let tm = time::at_utc(timestamp);
-        let result = time::strftime("%Y-%m-%d %H:%M:%S", &tm);
+        let result = time::strftime("%H:%M:%S", &tm);
 
         // Check whether conversion went OK or we encountered an error, and either print the
         // timestamp or not

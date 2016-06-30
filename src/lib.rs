@@ -18,6 +18,16 @@ use rustc_serialize::json::DecoderError;
 use status::Status;
 use trip_info::Trip;
 
+/// A simple struct which contains GPS coordinates.
+#[derive(RustcDecodable, Debug)]
+#[allow(non_snake_case)]
+pub struct Coordinates {
+    /// The latitude of the station
+    pub latitude: f32,
+    /// The longitude of the station
+    pub longitude: f32,
+}
+
 /// Stores information which is needed to retrieve a status from the train.
 ///
 /// # Examples
@@ -142,7 +152,7 @@ impl TrainInformation {
     /// Convenience function to get the current speed of the train.
     pub fn get_speed(&self) -> Option<f32> {
         match self.get_status() {
-            Some(status) => Some(status.speed),
+            Some(status) => Some(status.speed()),
             None => None,
         }
     }
