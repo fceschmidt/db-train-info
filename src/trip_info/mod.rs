@@ -59,6 +59,15 @@ pub struct MiscInfo {
     distanceFromStart: i64,
 }
 
+/// A reason for a delay.
+#[derive(RustcDecodable, Debug)]
+#[allow(non_snake_case)]
+pub struct DelayReason {
+    code: String,
+    text: String,
+}
+
+
 /// A stop in the trajectory of a train.
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
@@ -67,7 +76,7 @@ pub struct Stop {
     timetable: TimeInfo,
     track: TrackInfo,
     info: MiscInfo,
-    delayReasons: Option<String>,
+    delayReasons: Option<Vec<DelayReason>>,
 }
 
 /// The trip of a train.
@@ -82,16 +91,12 @@ pub struct Stop {
 pub struct Trip {
     /// The date of the trip in yyyy-mm-dd format
     pub tripDate: String,
-    /// The type of the train (most commonly, "ICE")
-    pub trainType: String,
-    /// The train number
-    pub vzn: String,
+    trainType: String,
+    vzn: String,
     /// Unknown
     pub actualPosition: i64,
-    /// The current distance from the last stop in the trajectory, in meters
-    pub distanceFromLastStop: i64,
-    /// The total distance travelled by this train from start to end, in meters
-    pub totalDistance: i64,
+    distanceFromLastStop: i64,
+    totalDistance: i64,
     /// Last/next stop information
     pub stopInfo: TrainVicinity,
     /// The stops along the trajectory of this train

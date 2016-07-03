@@ -57,9 +57,26 @@ impl Trip {
         }
     }
 
+    /// The total distance travelled by this train from start to end, in kilometers
+    pub fn total_distance(&self) -> f64 {
+        Trip::distance_to_km(self.totalDistance)
+    }
+
     /// Returns the identifier of the train, like "ICE xxx".
     pub fn train_identifier(&self) -> String {
         format!("{} {}", self.trainType, self.vzn)
+    }
+
+    /// The type of the train, e.g. "ICE"
+    pub fn train_type(&self) -> &String {
+        &self.trainType
+    }
+
+    /// The unique number of the train
+    ///
+    /// Unique on each day of the timetable.
+    pub fn train_number(&self) -> &String {
+        &self.vzn
     }
 
     /// Get a reference to the first station in the trajectory
