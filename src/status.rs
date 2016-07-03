@@ -49,7 +49,7 @@ impl Status {
 impl fmt::Display for Status {
     /// Prints the `Status` struct in a human-readable format.
     ///
-    /// Prints speed, GPS coordinates and the server timestamp interpreted as UTC time. If
+    /// Prints speed, GPS coordinates and the server timestamp interpreted as local time. If
     /// formatting the server timestamp fails, it is omitted in the result of this function.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // Calculate the timestamp for the `time` crate
@@ -57,7 +57,7 @@ impl fmt::Display for Status {
             sec: self.serverTime / 1000,
             nsec: (self.serverTime % 1000) as i32 * 1000000,
         };
-        let tm = time::at_utc(timestamp);
+        let tm = time::at(timestamp);
         let result = time::strftime("%H:%M:%S", &tm);
 
         // Check whether conversion went OK or we encountered an error, and either print the
