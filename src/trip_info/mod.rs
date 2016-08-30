@@ -5,6 +5,7 @@ pub mod station_info;
 pub mod time_info;
 pub mod track_info;
 pub mod misc_info;
+pub mod delay_reason;
 pub mod stop;
 pub mod trip;
 
@@ -89,16 +90,12 @@ pub struct Stop {
 #[derive(RustcDecodable, Debug)]
 #[allow(non_snake_case)]
 pub struct Trip {
-    /// The date of the trip in yyyy-mm-dd format
-    pub tripDate: String,
+    tripDate: String,
     trainType: String,
     vzn: String,
-    /// Unknown
-    pub actualPosition: i64,
+    actualPosition: i64,
     distanceFromLastStop: i64,
     totalDistance: i64,
-    /// Last/next stop information
-    pub stopInfo: TrainVicinity,
-    /// The stops along the trajectory of this train
-    pub stops: Vec<Stop>,
+    stopInfo: TrainVicinity,
+    stops: Vec<Stop>,
 }

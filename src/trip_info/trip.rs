@@ -1,5 +1,6 @@
 use super::Trip;
 use super::Stop;
+use super::TrainVicinity;
 
 /// Functions to pretty-print `Trip` information
 impl Trip {
@@ -77,6 +78,26 @@ impl Trip {
     /// Unique on each day of the timetable.
     pub fn train_number(&self) -> &String {
         &self.vzn
+    }
+
+    /// The date of the trip in yyyy-mm-dd format
+    pub fn trip_date(&self) -> &String {
+        &self.tripDate
+    }
+
+    /// Unknown
+    pub fn actual_position(&self) -> i64 {
+        self.actualPosition
+    }
+
+    /// Last/next stop information
+    pub fn stop_info(&self) -> &TrainVicinity {
+        &self.stopInfo
+    }
+
+    /// The stops along the trajectory of this train
+    pub fn stops(&self) -> &Vec<Stop> {
+        &self.stops
     }
 
     /// Get a reference to the first station in the trajectory
